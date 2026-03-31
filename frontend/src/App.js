@@ -1,18 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import GaragePage from "./pages/GaragePage";
+import Navbar from "./components/Navbar";
 
-const App = () => {
+function App() {
   return (
-    <Router>
+    <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/garage" element={<GaragePage />} /> 
+        <Route path="/garage" element={<GaragePage />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
