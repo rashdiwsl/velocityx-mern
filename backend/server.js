@@ -6,25 +6,17 @@ import garageRoutes from "./routes/garageRoutes.js";
 
 const app = express();
 
-// Enable JSON parsing
 app.use(express.json());
+app.use(cors());
 
-// CORS middleware must come before routes
-app.use(cors({
-  origin: "http://localhost:3000", // React dev server
-}));
-
-// Routes
-app.use("/api/garage", garageRoutes);
-app.use("/api/cars", carRoutes);
-
-// DB connect
 connectDB();
 
-// Test route
 app.get("/", (req, res) => {
   res.send("VelocityX API Running");
 });
+
+app.use("/api/cars", carRoutes);
+app.use("/api/garage", garageRoutes);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));
