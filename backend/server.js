@@ -2,20 +2,26 @@ import express from "express";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import carRoutes from "./routes/carRoutes.js";
-
+import garageRoutes from "./routes/garageRoutes.js";
 
 const app = express();
 
-// middleware
-
-app.use("/api/cars", carRoutes);
+// Enable JSON parsing
 app.use(express.json());
-app.use(cors());
+
+// CORS middleware must come before routes
+app.use(cors({
+  origin: "http://localhost:3000", // React dev server
+}));
+
+// Routes
+app.use("/api/garage", garageRoutes);
+app.use("/api/cars", carRoutes);
 
 // DB connect
 connectDB();
 
-// test route
+// Test route
 app.get("/", (req, res) => {
   res.send("VelocityX API Running");
 });
