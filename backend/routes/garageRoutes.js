@@ -1,27 +1,41 @@
-import express from "express";
-import Car from "../models/Car.js";
-
+const express = require('express');
 const router = express.Router();
+const Garage = require('../models/Garage');
+const { protect } = require('../middleware/authMiddleware');
 
-let garage = [];
-
-// Add to garage
-router.post("/add", async (req, res) => {
-  const { carId } = req.body;
-  const car = await Car.findById(carId);
-  garage.push(car);
-  res.json(garage);
+router.get('/', protect, async (req, res) => {
+  try {
+    let garage = await Garage.findOne({ user: req.user._id }).populate('cars');
+    if (!garage) garage = await Garage.create({ user: req.user._id, cars: [] });
+    res.json(garage);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
-// Get garage
-router.get("/", (req, res) => {
-  res.json(garage);
+router.post('/add/:carId', protect, async (req, res) => {
+  try {
+    let garage = await Garage.findOne({ user: req.user._id });
+    if (!garage) garage = await Garage.create({ user: req.user._id, cars: [] });
+    if (!garage.cars.includes(req.params.carId)) {
+      garage.cars.push(req.params.carId);
+      await garage.save();
+    }
+    res.json(garage);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
-// Remove from garage
-router.delete("/:id", (req, res) => {
-  garage = garage.filter((c) => c._id != req.params.id);
-  res.json(garage);
+router.delete('/remove/:carId', protect, async (req, res) => {
+  try {
+    const garage = await Garage.findOne({ user: req.user._id });
+    garage.cars = garage.cars.filter(id => id.toString() !== req.params.carId);
+    await garage.save();
+    res.json(garage);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
-export default router;
+module.exports = router;
