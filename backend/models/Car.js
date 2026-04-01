@@ -1,10 +1,17 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 
 const carSchema = new mongoose.Schema({
-  name: String,
-  price: Number,
-  image: String,
-  description: String,
-});
+  title: { type: String, required: true },
+  brand: { type: String, required: true },
+  model: { type: String, required: true },
+  year: { type: Number, required: true },
+  price: { type: Number, required: true },
+  mileage: { type: Number },
+  fuelType: { type: String, enum: ['Petrol', 'Diesel', 'Electric', 'Hybrid'], default: 'Petrol' },
+  transmission: { type: String, enum: ['Manual', 'Automatic'], default: 'Manual' },
+  image: { type: String, default: '' },
+  description: { type: String },
+  seller: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+}, { timestamps: true });
 
-export default mongoose.model("Car", carSchema);
+module.exports = mongoose.model('Car', carSchema);
