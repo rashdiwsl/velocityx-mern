@@ -10,7 +10,10 @@ const carSchema = new mongoose.Schema({
   fuelType: { type: String, enum: ['Petrol', 'Diesel', 'Electric', 'Hybrid'], default: 'Petrol' },
   transmission: { type: String, enum: ['Manual', 'Automatic'], default: 'Manual' },
   image: { type: String, default: '' },
+  images: [{ type: String }],
   description: { type: String },
+  status: { type: String, enum: ['Available', 'Sold'], default: 'Available' },
+  sellerContact: { type: String, default: '' },
   seller: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
 }, { timestamps: true });
 

@@ -1,0 +1,18 @@
+.home-container {
+  background-color: #111827;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.home-title {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.car-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

@@ -39,5 +39,17 @@ router.delete('/:id', protect, async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-
+router.patch('/:id/status', protect, async (req, res) => {
+  try {
+    const car = await Car.findById(req.params.id);
+    if (!car) return res.status(404).json({ message: 'Car not found' });
+    if (car.seller.toString() !== req.user._id.toString())
+      return res.status(401).json({ message: 'Not authorized' });
+    car.status = req.body.status;
+    await car.save();
+    res.json(car);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 module.exports = router;
