@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { addToGarage, updateCarStatus } from '../api';
 import ImageCarousel from './ImageCarousel';
 import CarAI from './CarAI';
+import ContactModal from './ContactModal'; // ← ADD THIS
 
 function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
   const isSold = car.status === 'Sold';
   const [status, setStatus] = useState(car.status || 'Available');
   const [showAI, setShowAI] = useState(false);
+  const [showContact, setShowContact] = useState(false); // ← ADD THIS
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -27,7 +29,7 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
     try {
       await addToGarage(car._id);
       onWatchlist('success', `${car.brand} ${car.model} added to Watchlist ✓`);
-      onClose();
+      setTimeout(() => onClose(), 1500);
     } catch (err) {
       const msg = err.response?.data?.message || '';
       if (msg.toLowerCase().includes('already')) {
@@ -35,17 +37,13 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
       } else {
         onWatchlist('error', 'Could not add to Watchlist');
       }
-      onClose();
     }
   };
 
+  // ← REPLACE your old handleContact with this
   const handleContact = () => {
     if (!user) { onClose(); navigate('/login'); return; }
-    const subject = encodeURIComponent(`Enquiry about ${car.title}`);
-    const body = encodeURIComponent(
-      `Hi,\n\nI'm interested in your ${car.year} ${car.title} listed on VelocityX for $${car.price?.toLocaleString()}.\n\nPlease let me know if it's still available.\n\nThanks,\n${user.name}`
-    );
-    window.open(`mailto:${car.sellerContact || 'admin@velocityx.com'}?subject=${subject}&body=${body}`);
+    setShowContact(true);
   };
 
   const handleShare = () => {
@@ -106,7 +104,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               background: 'linear-gradient(to top, rgba(15,15,15,1) 0%, transparent 55%)'
             }} />
 
-            {/* SOLD overlay */}
             {isSold && (
               <div style={{
                 position: 'absolute', inset: 0,
@@ -121,7 +118,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               </div>
             )}
 
-            {/* Close button */}
             <button onClick={onClose} style={{
               position: 'absolute', top: 14, right: 14, zIndex: 10,
               background: 'rgba(0,0,0,0.65)', border: '1px solid #2a2a2a',
@@ -130,7 +126,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               display: 'flex', alignItems: 'center', justifyContent: 'center'
             }}>×</button>
 
-            {/* Ask AI button */}
             <button
               onClick={(e) => { e.stopPropagation(); setShowAI(true); }}
               style={{
@@ -140,7 +135,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
                 fontSize: 12, fontWeight: 700, cursor: 'pointer', backdropFilter: 'blur(4px)'
               }}>🤖 Ask AI</button>
 
-            {/* Status badge */}
             <span style={{
               position: 'absolute', top: 56, left: 14, zIndex: 10,
               background: status === 'Available' ? 'rgba(16,185,129,0.15)' : 'rgba(192,57,43,0.15)',
@@ -153,7 +147,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               {status}
             </span>
 
-            {/* Fuel badge */}
             <span style={{
               position: 'absolute', bottom: 64, left: 20, zIndex: 10,
               background: 'rgba(0,0,0,0.55)', border: `1px solid ${fuelColor}50`,
@@ -161,7 +154,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               fontSize: 11, fontWeight: 600, backdropFilter: 'blur(4px)'
             }}>{car.fuelType}</span>
 
-            {/* Title overlay */}
             <div style={{ position: 'absolute', bottom: 20, left: 24, zIndex: 10 }}>
               <p style={{ color: '#c0392b', fontSize: 11, fontWeight: 700, letterSpacing: 3, textTransform: 'uppercase', marginBottom: 4 }}>
                 {car.brand}
@@ -174,8 +166,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
 
           {/* CONTENT */}
           <div style={{ padding: '24px 28px 28px' }}>
-
-            {/* Price + CTAs */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
               <div>
                 <p style={{ color: '#3a3a3a', fontSize: 11, marginBottom: 4 }}>Asking Price</p>
@@ -190,7 +180,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               </div>
 
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                {/* Share */}
                 <button onClick={handleShare} style={{
                   background: 'transparent', border: '1px solid #2a2a2a',
                   color: '#6b6b6b', borderRadius: 12, padding: '12px 16px',
@@ -200,7 +189,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
                   onMouseLeave={e => { e.target.style.borderColor='#2a2a2a'; e.target.style.color='#6b6b6b'; }}
                 >🔗 Share</button>
 
-                {/* Owner: toggle sold */}
                 {isOwner && (
                   <button onClick={handleToggleSold} style={{
                     background: 'transparent',
@@ -213,7 +201,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
                   </button>
                 )}
 
-                {/* Buyer: watchlist */}
                 {!isSold && !isOwner && (
                   <button onClick={handleWatchlist} style={{
                     background: 'transparent', color: '#9ca3af',
@@ -225,7 +212,7 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
                   >+ Watchlist</button>
                 )}
 
-                {/* Buyer: contact seller */}
+                {/* ← onClick now calls handleContact */}
                 {!isSold && !isOwner && (
                   <button onClick={handleContact} style={{
                     background: '#c0392b', color: '#fff', border: 'none',
@@ -239,7 +226,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               </div>
             </div>
 
-            {/* Specs */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: 10, marginBottom: 20 }}>
               {specs.map(({ label, value }) => (
                 <div key={label} style={{ background: '#141414', border: '1px solid #1e1e1e', borderRadius: 10, padding: '10px 14px' }}>
@@ -249,7 +235,6 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
               ))}
             </div>
 
-            {/* Description */}
             {car.description && (
               <div style={{ background: '#141414', border: '1px solid #1e1e1e', borderRadius: 12, padding: '16px 18px' }}>
                 <p style={{ color: '#3a3a3a', fontSize: 10, fontWeight: 600, letterSpacing: 2, textTransform: 'uppercase', marginBottom: 8 }}>About this car</p>
@@ -260,8 +245,16 @@ function CarModal({ car, onClose, onWatchlist, onStatusChange }) {
         </div>
       </div>
 
-      {/* AI modal sits outside the main modal so z-index works */}
+      {/* Modals outside so z-index works */}
       {showAI && <CarAI car={car} onClose={() => setShowAI(false)} />}
+      {showContact && (        // ← ADD THIS
+        <ContactModal
+          car={car}
+          user={user}
+          onClose={() => setShowContact(false)}
+          onToast={onWatchlist}
+        />
+      )}
     </>
   );
 }
