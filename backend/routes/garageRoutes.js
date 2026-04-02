@@ -17,10 +17,14 @@ router.post('/add/:carId', protect, async (req, res) => {
   try {
     let garage = await Garage.findOne({ user: req.user._id });
     if (!garage) garage = await Garage.create({ user: req.user._id, cars: [] });
-    if (!garage.cars.includes(req.params.carId)) {
-      garage.cars.push(req.params.carId);
-      await garage.save();
+
+    const alreadyIn = garage.cars.map(id => id.toString()).includes(req.params.carId);
+    if (alreadyIn) {
+      return res.status(400).json({ message: 'Already in your Watchlist' });
     }
+
+    garage.cars.push(req.params.carId);
+    await garage.save();
     res.json(garage);
   } catch (err) {
     res.status(500).json({ message: err.message });
