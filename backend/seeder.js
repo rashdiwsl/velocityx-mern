@@ -17,13 +17,33 @@ const cars = [
     transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1621285853634-713b8dd6b5fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjc1fHx8ZW58MHx8fHx8',
     images: [
-      'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80',
-      'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80',
-      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80',
+      'https://images.unsplash.com/photo-1621285853634-713b8dd6b5fd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjc1fHx8ZW58MHx8fHx8',
+      'https://images.unsplash.com/photo-1621285891826-0e26a90e9652?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjg0fHx8ZW58MHx8fHx8',
+      'https://images.unsplash.com/photo-1621285849733-39974b5d7497?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8Mjc4fHx8ZW58MHx8fHx8',
     ],
     description: '5.2L V10, 630hp, 0-100 in 2.9s. Pearl white with carbon interior.'
+  },
+
+  {
+    title: 'Ford Mustang Shelby GT500',
+    brand: 'Ford',
+    model: 'Mustang Shelby GT500',
+    year: 2022,
+    price: 79995,
+    mileage: 6200,
+    fuelType: 'Petrol',
+    transmission: 'Automatic',
+    status: 'Available',
+    sellerContact: 'admin@velocityx.com',
+    image: 'https://shelby.com/media/images/vehicles/gt500_signature/gallery/20_gt500se-3.jpg',
+    images: [
+      'https://shelby.com/media/images/vehicles/gt500_signature/gallery/20_gt500se-3.jpg',
+      'https://shelby.com/media/images/vehicles/gt500_signature/gallery/20_gt500se-4.jpg',
+      'https://shelby.com/media/images/vehicles/gt500_signature/gallery/20_gt500se-1.jpg',
+    ],
+    description: '5.2L supercharged V8, 760hp. Shadow Black. Carbon Fibre Track Pack.'
   },
   {
     title: 'Ferrari 488 GTB',
@@ -36,7 +56,7 @@ const cars = [
     transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1690732933382-779d8f5b91b7?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     images: [
       'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&q=80',
       'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
@@ -44,25 +64,27 @@ const cars = [
     ],
     description: 'Twin-turbo 3.9L V8, 661hp. Rosso Corsa red. Full Ferrari service history.'
   },
-  {
-    title: 'Porsche 911 GT3',
-    brand: 'Porsche',
-    model: '911 GT3',
+
+ {
+    title: 'Tesla Model S Plaid',
+    brand: 'Tesla',
+    model: 'Model S Plaid',
     year: 2023,
-    price: 198500,
-    mileage: 1200,
-    fuelType: 'Petrol',
-    transmission: 'Manual',
+    price: 109990,
+    mileage: 11200,
+    fuelType: 'Electric',
+    transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
+    image: 'https://hips.hearstapps.com/hmg-prod/images/2026-tesla-model-s-plaid-134-68f6610846819.jpg?crop=1xw:1xh;center,top',
     images: [
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
-      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80',
+      'https://hips.hearstapps.com/hmg-prod/images/2026-tesla-model-s-plaid-134-68f6610846819.jpg?crop=1xw:1xh;center,top',
+      'https://hips.hearstapps.com/hmg-prod/images/2026-tesla-model-s-plaid-107-68f660f56b67c.jpg?crop=1xw:1xh;center,top',
+      'https://hips.hearstapps.com/hmg-prod/images/2026-tesla-model-s-plaid-111-68f660fb960fc.jpg?crop=1xw:1xh;center,top',
     ],
-    description: '4.0L flat-six, 510hp, naturally aspirated. Guards Red, Clubsport package.'
+    description: 'Tri-motor, 1020hp, 0-100 in 2.1s. 600km range. Yoke steering, 17" display.'
   },
+  
   {
     title: 'McLaren 720S',
     brand: 'McLaren',
@@ -74,11 +96,11 @@ const cars = [
     transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    image: 'https://www.mansory.com/cdn-cgi/image/format=avif,quality=90/https://cdn.prod.website-files.com/661d6e0d2e84ef511db18f17/6818c186b53bf8d6c75d1530_McLaren%2520720S-Gallery-004.webp',
     images: [
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80',
-      'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80',
+      'https://www.mansory.com/cdn-cgi/image/format=avif,quality=90/https://cdn.prod.website-files.com/661d6e0d2e84ef511db18f17/6818c186b53bf8d6c75d1530_McLaren%2520720S-Gallery-004.webp',
+      'https://www.mansory.com/cdn-cgi/image/format=avif,quality=90/https://cdn.prod.website-files.com/661d6e0d2e84ef511db18f17/6818c185b53bf8d6c75d148e_McLaren%2520720S-Gallery-002.webp',
+      'https://www.mansory.com/cdn-cgi/image/format=avif,quality=90/https://cdn.prod.website-files.com/661d6e0d2e84ef511db18f17/6818c187b53bf8d6c75d1731_McLaren%2520720S-Gallery-003.webp',
     ],
     description: '4.0L twin-turbo V8, 720hp. Papaya Spark orange. Carbon fibre monocoque chassis.'
   },
@@ -93,11 +115,11 @@ const cars = [
     transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+    image: 'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/10/BMW-M4-CS-1.jpg?w=1200&h=900&crop=1',
     images: [
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
-      'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&q=80',
-      'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80',
+      'https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/10/BMW-M4-CS-1.jpg?w=1200&h=900&crop=1',
+      'https://di-uploads-pod23.dealerinspire.com/bmwofowingsmills/uploads/2024/07/P90548593_highRes_the-all-new-bmw-m4-c-1-1024x683.jpg',
+      'https://simemotors.com.au/wp-content/uploads/2024-bmw-m4-cs-13-scaled.jpg',
     ],
     description: 'S58 3.0L twin-turbo, 503hp. Isle of Man Green. M xDrive, carbon roof.'
   },
@@ -112,11 +134,11 @@ const cars = [
     transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80',
+    image: 'https://www.mercedes-amg.com/media/images/1a7f764e58cc88cd45cc52405d083f05408820ff-1352x1014.jpg?auto=format&fit=max&q=75&w=1352',
     images: [
-      'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80',
-      'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80',
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      'https://www.mercedes-amg.com/media/images/1a7f764e58cc88cd45cc52405d083f05408820ff-1352x1014.jpg?auto=format&fit=max&q=75&w=1352',
+      'https://www.mercedes-amg.com/media/images/427deb93d7915a4124428af18d1f11792a3fbd2d-1920x1080.jpg?auto=format&fit=max&q=75&w=1920',
+      'https://www.mercedes-amg.com/media/images/2cb55f9ac77334c82a28f49cf4d9d9786729205a-1920x1080.jpg?auto=format&fit=max&q=75&w=1920',
     ],
     description: '4.0L biturbo V8, 730hp. Obsidian Black. One of 900 units worldwide.'
   },
@@ -131,11 +153,11 @@ const cars = [
     transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80',
+    image: 'https://www.topgear.com/sites/default/files/2021/12/A218766_large.jpg?w=1784&h=1004',
     images: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&q=80',
-      'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
+      'https://www.topgear.com/sites/default/files/2021/12/A218766_large.jpg?w=1784&h=1004',
+      'https://www.topgear.com/sites/default/files/2021/12/A218761_large.jpg?w=1784&h=1004',
+      'https://www.topgear.com/sites/default/files/2021/12/A218764_large.jpg?w=892&h=502',
     ],
     description: '5.2L FSI V10, 620hp, 8250rpm redline. Daytona Grey. Laser headlights.'
   },
@@ -150,11 +172,11 @@ const cars = [
     transmission: 'Automatic',
     status: 'Sold',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1549927681-0b673b8243ab?w=800&q=80',
+    image: 'https://www.bugattiofgreenwich.com/wp-content/themes/aanWordpress/images/model_pages/chiron-sport/chiron-sport-1.jpg',
     images: [
-      'https://images.unsplash.com/photo-1549927681-0b673b8243ab?w=800&q=80',
-      'https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80',
-      'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80',
+      'https://www.bugattiofgreenwich.com/wp-content/themes/aanWordpress/images/model_pages/chiron-sport/chiron-sport-1.jpg',
+      'https://www.bugattiofgreenwich.com/wp-content/uploads/2020/06/chiron-sport-2.jpg',
+      'https://www.bugattiofgreenwich.com/wp-content/themes/aanWordpress/images/model_pages/chiron-sport/chiron-sport-3.jpg',
     ],
     description: '8.0L quad-turbo W16, 1479hp. Sky View glass roof. One careful owner.'
   },
@@ -169,11 +191,11 @@ const cars = [
     transmission: 'Automatic',
     status: 'Sold',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&q=80',
+    image: 'https://www.topgear.com/sites/default/files/images/cars-road-test/carousel/2021/01/dc4894bd222beecd609968b65b33bdff/my20_gt-r_nismo_germany_36.jpg?w=892&h=502',
     images: [
-      'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&q=80',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
-      'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80',
+      'https://www.topgear.com/sites/default/files/images/cars-road-test/carousel/2021/01/dc4894bd222beecd609968b65b33bdff/my20_gt-r_nismo_germany_36.jpg?w=892&h=502',
+      'https://www.topgear.com/sites/default/files/images/cars-road-test/carousel/2021/01/dc4894bd222beecd609968b65b33bdff/my20_gt-r_nismo_germany_29.jpg?w=211&h=119',
+      'https://www.topgear.com/sites/default/files/images/cars-road-test/carousel/2021/01/dc4894bd222beecd609968b65b33bdff/my20_gt-r_nismo_germany_32.jpg?w=211&h=119',
     ],
     description: 'Hand-built 3.8L twin-turbo, 600hp. Ultimate R35 spec. Track-tuned suspension.'
   },
@@ -188,52 +210,16 @@ const cars = [
     transmission: 'Automatic',
     status: 'Available',
     sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&q=80',
+    image: 'https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/Performance/2026-corvette-z06/page-assets/03-design/2026-z06-design-01.jpg?imwidth=2400',
     images: [
-      'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&q=80',
-      'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&q=80',
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      'https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/Performance/2026-corvette-z06/page-assets/03-design/2026-z06-design-01.jpg?imwidth=2400',
+      'https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/Performance/2026-corvette-z06/page-assets/05-performance/2026-z06-performance-04.jpg?imwidth=1200',
+      'https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/Performance/2026-corvette-z06/page-assets/05-performance/2026-z06-performance-01.jpg?imwidth=1200',
     ],
     description: 'LT6 5.5L flat-plane V8, 670hp, 8600rpm. Torch Red. Z07 aero package.'
   },
-  {
-    title: 'Tesla Model S Plaid',
-    brand: 'Tesla',
-    model: 'Model S Plaid',
-    year: 2023,
-    price: 109990,
-    mileage: 11200,
-    fuelType: 'Electric',
-    transmission: 'Automatic',
-    status: 'Available',
-    sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80',
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80',
-      'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80',
-    ],
-    description: 'Tri-motor, 1020hp, 0-100 in 2.1s. 600km range. Yoke steering, 17" display.'
-  },
-  {
-    title: 'Ford Mustang Shelby GT500',
-    brand: 'Ford',
-    model: 'Mustang Shelby GT500',
-    year: 2022,
-    price: 79995,
-    mileage: 6200,
-    fuelType: 'Petrol',
-    transmission: 'Automatic',
-    status: 'Available',
-    sellerContact: 'admin@velocityx.com',
-    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80',
-    images: [
-      'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
-      'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&q=80',
-    ],
-    description: '5.2L supercharged V8, 760hp. Shadow Black. Carbon Fibre Track Pack.'
-  },
+ 
+  
 ];
 
 const seed = async () => {
