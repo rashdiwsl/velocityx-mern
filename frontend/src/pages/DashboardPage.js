@@ -16,12 +16,16 @@ function DashboardPage() {
   }, []);
 
   const fetchMyCars = async () => {
-    try {
-      const { data } = await getCars({});
-      setMyCars(data.filter(car => car.seller?._id === user._id));
-    } catch { show('Error loading your listings', 'error'); }
-    finally { setLoading(false); }
-  };
+  try {
+    const { data } = await getCars({});
+    // toString() fixes the ObjectId vs string comparison bug
+    setMyCars(data.filter(car => car.seller?._id?.toString() === user._id?.toString()));
+  } catch {
+    show('Error loading your listings', 'error');
+  } finally {
+    setLoading(false);
+  }
+};
 
   const handleDelete = async (id, title) => {
     if (!window.confirm(`Remove ${title} from listings?`)) return;
