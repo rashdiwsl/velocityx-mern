@@ -51,6 +51,38 @@ A full-stack MERN car marketplace where users can browse premium vehicles, save 
 
 ---
 
+## Screenshots
+
+### Home Page
+![Home Page](frontend/public/screenshots/home.png)
+
+![Home 1 Page](frontend/public/screenshots/home1.png)
+
+![Home 2 Page](frontend/public/screenshots/home2.png)
+
+### AI chat Page
+![AI chat Page](frontend/public/screenshots/ai.png)
+
+### Login Page
+![Login Page](frontend/public/screenshots/login.png)
+
+### Signup Page
+![Signup Page](frontend/public/screenshots/signup.png)
+
+### List Page
+![List Page](frontend/public/screenshots/list.png)
+
+### Seller Dashboard
+![Dashboard](frontend/public/screenshots/dashboard.png)
+
+### Personal Watchlist (Garage)
+![Garage Page](frontend/public/screenshots/garage.png)\
+
+
+### Contact Page
+![Contact Page](frontend/public/screenshots/contact.png)
+
+
 ## Getting Started
 
 ### Prerequisites
@@ -220,36 +252,6 @@ velocityx-mern/
 ---
 
 
-## Screenshots
-
-### Home Page
-![Home Page](frontend/public/screenshots/home.png)
-
-![Home 1 Page](frontend/public/screenshots/home1.png)
-
-![Home 2 Page](frontend/public/screenshots/home2.png)
-
-### AI chat Page
-![AI chat Page](frontend/public/screenshots/ai.png)
-
-### Login Page
-![Login Page](frontend/public/screenshots/login.png)
-
-### Signup Page
-![Signup Page](frontend/public/screenshots/signup.png)
-
-### List Page
-![List Page](frontend/public/screenshots/list.png)
-
-### Seller Dashboard
-![Dashboard](frontend/public/screenshots/dashboard.png)
-
-### Personal Watchlist (Garage)
-![Garage Page](frontend/public/screenshots/garage.png)\
-
-
-### Contact Page
-![Contact Page](frontend/public/screenshots/contact.png)
 
 ## Author
 
