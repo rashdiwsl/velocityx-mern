@@ -224,7 +224,9 @@ velocityx-mern/
 
 ### Home Page
 ![Home Page](frontend/public/screenshots/home.png)
+
 ![Home 1 Page](frontend/public/screenshots/home1.png)
+
 ![Home 2 Page](frontend/public/screenshots/home2.png)
 
 ### AI chat Page
@@ -247,7 +249,7 @@ velocityx-mern/
 
 
 ### Contact Page
-![Contact Page](frontend/public/screenshots/contac.png)
+![Contact Page](frontend/public/screenshots/contact.png)
 
 ## Author
 
