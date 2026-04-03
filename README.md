@@ -224,6 +224,11 @@ velocityx-mern/
 
 ### Home Page
 ![Home Page](frontend/public/screenshots/home.png)
+![Home 1 Page](frontend/public/screenshots/home1.png)
+![Home 2 Page](frontend/public/screenshots/home2.png)
+
+### AI chat Page
+![AI chat Page](frontend/public/screenshots/ai.png)
 
 ### Login Page
 ![Login Page](frontend/public/screenshots/login.png)
@@ -231,16 +236,18 @@ velocityx-mern/
 ### Signup Page
 ![Signup Page](frontend/public/screenshots/signup.png)
 
-### Home Page
-![Home Page](frontend/public/screenshots/home.png)
-
+### List Page
+![List Page](frontend/public/screenshots/list.png)
 
 ### Seller Dashboard
 ![Dashboard](frontend/public/screenshots/dashboard.png)
 
 ### Personal Watchlist (Garage)
-![Garage Page](frontend/public/screenshots/garage.png)
+![Garage Page](frontend/public/screenshots/garage.png)\
 
+
+### Contact Page
+![Contact Page](frontend/public/screenshots/contac.png)
 
 ## Author
 
